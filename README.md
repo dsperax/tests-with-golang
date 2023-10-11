@@ -7,7 +7,7 @@
 - poc-scheduler-postgres-endpoint: scheduler que extrai dados da base, realiza logica e chama endpoint para disparo de emails;
 
 ## Log generic class ex
-
+https://programmingpercy.tech/blog/how-to-use-structured-json-logging-in-golang-applications/
 ```
 package log
 
