@@ -1,0 +1,25 @@
+mode: set
+poc-consumer-go-postgres/domain/database/business-entity.go:33.43,35.2 1 0
+poc-consumer-go-postgres/domain/database/business-entity.go:37.81,42.16 4 1
+poc-consumer-go-postgres/domain/database/business-entity.go:42.16,44.3 1 0
+poc-consumer-go-postgres/domain/database/business-entity.go:46.2,47.16 2 1
+poc-consumer-go-postgres/domain/database/business-entity.go:47.16,49.3 1 0
+poc-consumer-go-postgres/domain/database/business-entity.go:51.2,52.16 2 1
+poc-consumer-go-postgres/domain/database/business-entity.go:52.16,54.3 1 0
+poc-consumer-go-postgres/domain/database/business-entity.go:56.2,58.16 3 1
+poc-consumer-go-postgres/domain/database/business-entity.go:58.16,61.3 2 0
+poc-consumer-go-postgres/domain/database/business-entity.go:63.2,65.16 3 1
+poc-consumer-go-postgres/domain/database/business-entity.go:65.16,67.3 1 0
+poc-consumer-go-postgres/domain/database/business-entity.go:69.2,70.16 2 1
+poc-consumer-go-postgres/domain/database/business-entity.go:70.16,72.3 1 0
+poc-consumer-go-postgres/domain/database/business-entity.go:74.2,76.16 3 1
+poc-consumer-go-postgres/domain/database/business-entity.go:76.16,78.3 1 0
+poc-consumer-go-postgres/domain/database/business-entity.go:80.2,83.16 4 1
+poc-consumer-go-postgres/domain/database/business-entity.go:83.16,85.3 1 0
+poc-consumer-go-postgres/domain/database/business-entity.go:87.2,88.16 2 1
+poc-consumer-go-postgres/domain/database/business-entity.go:88.16,90.3 1 0
+poc-consumer-go-postgres/domain/database/business-entity.go:92.2,93.16 2 1
+poc-consumer-go-postgres/domain/database/business-entity.go:93.16,95.3 1 0
+poc-consumer-go-postgres/domain/database/business-entity.go:97.2,98.16 2 1
+poc-consumer-go-postgres/domain/database/business-entity.go:98.16,100.3 1 0
+poc-consumer-go-postgres/domain/database/business-entity.go:102.2,105.12 3 1

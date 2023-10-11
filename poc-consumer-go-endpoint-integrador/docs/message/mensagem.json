@@ -1,0 +1,18 @@
+{
+	"chave_acesso_cte":"33230704221023001078570010048795181148262270",
+	"cnpj_transportador":"04221023001400",
+	"tpEvento": "110111",
+	"tipo_erro": [
+		{
+			"campo":"CTe.infCte.Id"
+		},
+		{
+			"campo":"CTe.infCte.ide.CFOP"
+		}
+	],
+	"dhEvento": "2022-09-21T18:29:31-03:00",
+	"nProt": "string",
+	"xJust": "string",
+	"descEvento": "string",
+	"data_recebimento":"2023-05-21T00:52:09.638907Z"
+}

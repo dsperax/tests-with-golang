@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>database: Go Coverage Report</title>
+		<style>
+			body {
+				background: black;
+				color: rgb(80, 80, 80);
+			}
+			body, pre, #legend span {
+				font-family: Menlo, monospace;
+				font-weight: bold;
+			}
+			#topbar {
+				background: black;
+				position: fixed;
+				top: 0; left: 0; right: 0;
+				height: 42px;
+				border-bottom: 1px solid rgb(80, 80, 80);
+			}
+			#content {
+				margin-top: 50px;
+			}
+			#nav, #legend {
+				float: left;
+				margin-left: 10px;
+			}
+			#legend {
+				margin-top: 12px;
+			}
+			#nav {
+				margin-top: 10px;
+			}
+			#legend span {
+				margin: 0 5px;
+			}
+			.cov0 { color: rgb(192, 0, 0) }
+.cov1 { color: rgb(128, 128, 128) }
+.cov2 { color: rgb(116, 140, 131) }
+.cov3 { color: rgb(104, 152, 134) }
+.cov4 { color: rgb(92, 164, 137) }
+.cov5 { color: rgb(80, 176, 140) }
+.cov6 { color: rgb(68, 188, 143) }
+.cov7 { color: rgb(56, 200, 146) }
+.cov8 { color: rgb(44, 212, 149) }
+.cov9 { color: rgb(32, 224, 152) }
+.cov10 { color: rgb(20, 236, 155) }
+
+		</style>
+	</head>
+	<body>
+		<div id="topbar">
+			<div id="nav">
+				<select id="files">
+				
+				<option value="file0">poc-consumer-go-postgres/domain/database/business-entity.go (71.1%)</option>
+				
+				</select>
+			</div>
+			<div id="legend">
+				<span>not tracked</span>
+			
+				<span class="cov0">not covered</span>
+				<span class="cov8">covered</span>
+			
+			</div>
+		</div>
+		<div id="content">
+		
+		<pre class="file" id="file0" style="display: none">package domain
+
+import (
+        "fmt"
+        "time"
+
+        domainkafka "poc-consumer-go-postgres/domain/kafka"
+        "poc-consumer-go-postgres/utils"
+)
+
+type BusinessEntity struct {
+        DocumentoOrigem    string    `gorm:"column:documento_origem"`
+        CodigoDocumento    int       `gorm:"column:codigo_documento"`
+        Desmembramento     int       `gorm:"column:desmembramento"`
+        NumeroEntrega      int64     `gorm:"column:numero_entrega"`
+        PontoControle      string    `gorm:"column:ponto_controle"`
+        TsOcorrencia       time.Time `gorm:"column:ts_ocorrencia"`
+        CnpjTransportadora string    `gorm:"column:cnpj_transportadora"`
+        NumeroConhecimento int       `gorm:"column:numero_conhecimento"`
+        NumeroNota         int       `gorm:"column:numero_nota"`
+        SerieNota          string    `gorm:"column:serie_nota"`
+        DataNota           time.Time `gorm:"column:data_nota"`
+        ChaveAcesso        string    `gorm:"column:chave_acesso"`
+        CnpjEmitente       string    `gorm:"column:cnpj_emitente"`
+        EmpresaEmitente    int       `gorm:"column:empresa_emitente"`
+        FilialEmitente     int       `gorm:"column:filial_emitente"`
+        AnoEmissao         int       `gorm:"column:ano_emissao"`
+        MesEmissao         int       `gorm:"column:mes_emissao"`
+        PagamentoFrete     string    `gorm:"column:pagamento_frete"`
+        PontoFinalizador   string    `gorm:"column:ponto_finalizador"`
+}
+
+func (*BusinessEntity) TableName() string <span class="cov0" title="0">{
+        return "trackingnotafiscal"
+}</span>
+
+func (p *BusinessEntity) FromDTO(mensagemkafka domainkafka.BusinessKafka) error <span class="cov8" title="1">{
+        var err error = nil
+
+        p.DocumentoOrigem = mensagemkafka.DocumentoOrigem
+        p.CodigoDocumento, err = utils.ValidaInt(mensagemkafka.CodigoDocumento)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov8" title="1">p.Desmembramento, err = utils.ValidaInt(mensagemkafka.Desmembramento)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov8" title="1">p.NumeroEntrega, err = utils.ValidaInt64(mensagemkafka.NumeroEntrega)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov8" title="1">p.PontoControle = mensagemkafka.PontoControle
+        p.TsOcorrencia, err = utils.ValidaDataHora(mensagemkafka.TsOcorrencia)
+        if err != nil </span><span class="cov0" title="0">{
+                fmt.Println(err.Error())
+                return err
+        }</span>
+
+        <span class="cov8" title="1">p.CnpjTransportadora = mensagemkafka.CnpjTransportadora
+        p.NumeroConhecimento, err = utils.ValidaInt(mensagemkafka.NumeroConhecimento)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov8" title="1">p.NumeroNota, err = utils.ValidaInt(mensagemkafka.NumeroNota)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov8" title="1">p.SerieNota = mensagemkafka.SerieNota
+        p.DataNota, err = utils.ValidaData(mensagemkafka.DataNota)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov8" title="1">p.ChaveAcesso = mensagemkafka.ChaveAcesso
+        p.CnpjEmitente = mensagemkafka.CnpjEmitente
+        p.EmpresaEmitente, err = utils.ValidaInt(mensagemkafka.EmpresaEmitente)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov8" title="1">p.FilialEmitente, err = utils.ValidaInt(mensagemkafka.FilialEmitente)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov8" title="1">p.AnoEmissao, err = utils.ValidaInt(mensagemkafka.AnoEmissao)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov8" title="1">p.MesEmissao, err = utils.ValidaInt(mensagemkafka.MesEmissao)
+        if err != nil </span><span class="cov0" title="0">{
+                return err
+        }</span>
+
+        <span class="cov8" title="1">p.PagamentoFrete = mensagemkafka.PagamentoFrete
+        p.PontoFinalizador = mensagemkafka.PontoFinalizador
+
+        return nil</span>
+}
+</pre>
+		
+		</div>
+	</body>
+	<script>
+	(function() {
+		var files = document.getElementById('files');
+		var visible;
+		files.addEventListener('change', onChange, false);
+		function select(part) {
+			if (visible)
+				visible.style.display = 'none';
+			visible = document.getElementById(part);
+			if (!visible)
+				return;
+			files.value = part;
+			visible.style.display = 'block';
+			location.hash = part;
+		}
+		function onChange() {
+			select(files.value);
+			window.scrollTo(0, 0);
+		}
+		if (location.hash != "") {
+			select(location.hash.substr(1));
+		}
+		if (!visible) {
+			select("file0");
+		}
+	})();
+	</script>
+</html>

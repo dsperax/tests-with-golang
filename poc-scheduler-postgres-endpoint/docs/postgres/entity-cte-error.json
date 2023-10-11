@@ -1,0 +1,18 @@
+{
+   "chave_acesso_cte":"33230704221023001078570010048795181148262",
+   "data_emissao_cte":"2023-07-10T00:20:51-03:00",
+   "chave_acesso_nota":"33230733041260080338550000359416121122028",
+   "cd_cnpj_transportador":"31242412312",
+   "status":"E",
+   "cd_erro":"3",
+   "tipo_servico":"venda",
+   "tipo_erro":[
+      {
+         "campo":"CTe.infCte.Id"
+      },
+      {
+         "campo":"CTe.infCte.ide.CFOP"
+      }
+   ],
+   "data_inclusao":"2023-05-21T00:52:09.638907Z"
+}
